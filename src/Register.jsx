@@ -1,9 +1,25 @@
-import React from 'react'
+import { useState } from 'react'
 import './Register.css'
 function Register() {
+ const [formData,setFormData] = useState({
+    username:"",
+    phoneNumber:"",
+    email:"",
+    password:"",
+    confirmPassword:""
+ })
+
+ function handleFormChange(e){
+    setFormData(()=>(
+        {
+            ...formData,
+            [e.target.id]:e.target.value
+        }
+    ))
+ }
   return (
     <div className='register-container'>
-        <h1>Register with us <span>Your trusted pit crew for top-notch car fixes!</span></h1>
+        <h1 id='header'>Register with us <span>Your trusted pit crew for top-notch car fixes!</span></h1>
     <div className="register-form">
       <h2>Register</h2>
       <form>
@@ -12,7 +28,8 @@ function Register() {
           type="text"
           id="username"
           name="username"
-          value = ""
+          value = {formData.username}
+          onChange={handleFormChange}
           required
         />
 
@@ -21,7 +38,8 @@ function Register() {
           type="text"
           id="phoneNumber"
           name="phoneNumber"
-          value = ""
+          value = {formData.phoneNumber}
+          onChange={handleFormChange}
           required
         />
 
@@ -30,7 +48,8 @@ function Register() {
           type="email"
           id="email"
           name="email"
-          value = ""
+          value = {formData.email}
+          onChange={handleFormChange}
           required
         />
 
@@ -39,7 +58,8 @@ function Register() {
           type="password"
           id="password"
           name="password"
-          value = ""
+          value = {formData.password}
+          onChange={handleFormChange}
           required
         />
 
@@ -48,7 +68,8 @@ function Register() {
           type="password"
           id="confirmPassword"
           name="confirmPassword"
-          value = ""
+          value = {formData.confirmPassword}
+          onChange={handleFormChange}
           required
         />
 

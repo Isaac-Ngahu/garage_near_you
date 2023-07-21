@@ -1,3 +1,11 @@
+#header {
+    text-align: center;
+    color:black solid;
+} 
+span {
+   color: black solid; 
+}
+  
 .register-form {
     background-color: #FFFF66;
     padding: 20px;
@@ -7,12 +15,7 @@
     margin-left: 450px;
     margin-top:0 ;
   }
-  h1 {
-    text-align: center;
-    color:black solid;
-  }
-
-  .register-container{
+ .register-container{
     height: 100vh;
     background-color: #baba2e;
   }

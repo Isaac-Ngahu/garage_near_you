@@ -12,7 +12,6 @@ function App() {
           <Route exact path='/register' Component={Register}/>
           </Routes>
       </Router>
-      
     </div>
   );
 }
