@@ -1,10 +1,11 @@
 import React from 'react'
 import './Home.css'
 function Home() {
+    const username = sessionStorage.getItem('username')
   return (
     <div className='home-page'>
     <header>
-    <p>logo</p>
+    <span></span>
   </header>
   <main>
     <section class="hero">

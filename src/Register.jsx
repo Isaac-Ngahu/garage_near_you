@@ -19,6 +19,7 @@ function Register() {
  }
  function handleFormSubmit(e){
     e.preventDefault()
+    sessionStorage.setItem('username':formData.username)
     let response = validateDetails(formData)
     if (response !== "proceed"){
         alert(response)
