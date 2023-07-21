@@ -3,6 +3,7 @@ import './Register.css'
 function Register() {
   return (
     <div className='register-container'>
+        <h1>Register with us <span>Your trusted pit crew for top-notch car fixes!</span></h1>
     <div className="register-form">
       <h2>Register</h2>
       <form>
