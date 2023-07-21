@@ -5,10 +5,10 @@ body {
   }
   
   header {
-    /* Styling for the header, e.g., background color, navigation, logo */
+    background-color: #FFFF66;
   }
   
-  /* Hero section styling */
+
   .hero {
     background-color: #FFFF66;
     text-align: center;
