@@ -1,9 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, redirect as Redirect } from 'react-router-dom'
 // import Register from './Register'
 import './Login.css'
 function Login() {
+    const [isLoggedIn,setIsLoggedIn] = useState(false)
     const [data,setData] = useState({
         username:'',
         password:''
@@ -16,7 +17,16 @@ function Login() {
     }
     function handleSubmit(e){
         e.preventDefault()
-        sessionStorage.setItem('username':data.username)
+        sessionStorage.setItem('username',data.username)
+        setData(()=>({
+            username:'',
+            password:''
+        }))
+        setIsLoggedIn(()=>true)
+        if (isLoggedIn){
+            return <Redirect to='/home'/>
+        }
+        
     }
   return (
     <div className='login-page'>

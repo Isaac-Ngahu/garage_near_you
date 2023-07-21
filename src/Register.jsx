@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { redirect as Redirect } from 'react-router-dom'
 import './Register.css'
 function Register() {
+ const[isRegistered,setIsRegistered] = useState(false)
  const [formData,setFormData] = useState({
     username:"",
     phoneNumber:"",
@@ -19,7 +21,7 @@ function Register() {
  }
  function handleFormSubmit(e){
     e.preventDefault()
-    sessionStorage.setItem('username':formData.username)
+    sessionStorage.setItem('username',formData.username)
     let response = validateDetails(formData)
     if (response !== "proceed"){
         alert(response)
@@ -36,6 +38,10 @@ function Register() {
         password:"",
         confirmPassword:""
     }))
+    setIsRegistered(()=>true)
+    if (isRegistered){
+    return <Redirect to='/home' />;
+}
     }
     
 
