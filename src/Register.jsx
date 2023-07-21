@@ -19,13 +19,19 @@ function Register() {
  }
  function handleFormSubmit(e){
     e.preventDefault()
-    response = validateDetails(formData)
+    let response = validateDetails(formData)
     if (response !== "proceed"){
         alert(response)
     }else{
         console.log("details are valid")
     }
-
+    setFormData(()=>({
+        username:"",
+        phoneNumber:"",
+        email:"",
+        password:"",
+        confirmPassword:""
+    }))
  }
  function validateDetails(data){
     const {username,phoneNumber,email,password,confirmPassword} = data
