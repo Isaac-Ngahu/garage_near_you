@@ -16,8 +16,9 @@ span {
     margin-top:0 ;
   }
  .register-container{
-    height: 100vh;
     background-color: #baba2e;
+    display: flex;
+    flex-direction: column;
   }
   
   h2 {
@@ -55,4 +56,19 @@ span {
   button:hover {
     background-color: #FFFF66;
     color: #FF6600;
+  }
+  .message {
+    list-style-type: none;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    background-color:#FFFF66 ;
+    color:#FF6600;
+    border-radius: 8px;
+    display: inline-block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  .append-message {
+    text-align: center;
   }

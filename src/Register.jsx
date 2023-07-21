@@ -23,8 +23,11 @@ function Register() {
     if (response !== "proceed"){
         alert(response)
     }else{
-        console.log("details are valid")
-    }
+    const messageContainer = document.querySelector(".append-message")
+    const li = document.createElement("li")
+    li.className = "message"
+    li.textContent = `Your profile has been created successfully ${formData.username}`
+    messageContainer.appendChild(li)
     setFormData(()=>({
         username:"",
         phoneNumber:"",
@@ -32,6 +35,9 @@ function Register() {
         password:"",
         confirmPassword:""
     }))
+    }
+    
+
  }
  function validateDetails(data){
     const {username,phoneNumber,email,password,confirmPassword} = data
@@ -50,6 +56,7 @@ function Register() {
   return (
     <div className='register-container'>
         <h1 id='header'>Register with us <span>Your trusted pit crew for top-notch car fixes!</span></h1>
+        <ul className='append-message'></ul>
     <div className="register-form">
       <h2>Register</h2>
       <form onSubmit={handleFormSubmit}>
