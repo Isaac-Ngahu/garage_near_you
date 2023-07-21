@@ -26,7 +26,7 @@ function Register() {
     const messageContainer = document.querySelector(".append-message")
     const li = document.createElement("li")
     li.className = "message"
-    li.textContent = `Your profile has been created successfully ${formData.username}`
+    li.innerHTML = `Your profile has been created successfully <span>${formData.username}</span>`
     messageContainer.appendChild(li)
     setFormData(()=>({
         username:"",
