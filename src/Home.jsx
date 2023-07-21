@@ -1,11 +1,13 @@
 import React from 'react'
 import './Home.css'
+import '@fortawesome/fontawesome-free/css/all.min.css';
 function Home() {
     const username = sessionStorage.getItem('username')
   return (
     <div className='home-page'>
     <header>
-    <span></span>
+    <div><i class="fa-solid fa-id-badge"></i> Ngahu</div>
+    <button id='edit profile'> Edit profile</button>
   </header>
   <main>
     <section class="hero">
