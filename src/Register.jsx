@@ -17,12 +17,36 @@ function Register() {
         }
     ))
  }
+ function handleFormSubmit(e){
+    e.preventDefault()
+    response = validateDetails(formData)
+    if (response !== "proceed"){
+        alert(response)
+    }else{
+        console.log("details are valid")
+    }
+
+ }
+ function validateDetails(data){
+    const {username,phoneNumber,email,password,confirmPassword} = data
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    const phoneNumberPattern = /^(?:\+254|254|0)?(7\d{8})$/
+    if (!phoneNumberPattern.test(phoneNumber)){
+        return "please enter valid phone number"
+    }else if (!emailPattern.test(email)){
+        return "please enter valid email"
+    }else if (password !== confirmPassword ){
+        return "passwords must match"
+    }else {
+        return "proceed"
+    }
+ }
   return (
     <div className='register-container'>
         <h1 id='header'>Register with us <span>Your trusted pit crew for top-notch car fixes!</span></h1>
     <div className="register-form">
       <h2>Register</h2>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <label htmlFor="username">Username:</label>
         <input
           type="text"
