@@ -1,14 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import './Home.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 function Home() {
     const username = sessionStorage.getItem('username')
+    const navigate = useNavigate()
   return (
     <div className='home-page'>
     <header>
     <div><i class="fa-solid fa-id-badge"></i> Ngahu</div>
-    <button>Leave review</button>
-    <button>Book appointment</button>
+    <button onClick={()=>navigate("/reviews")}>Leave review</button>
+    <button onClick={()=>navigate('/appointments')}>Book appointment</button>
     <button id='edit profile'> Edit profile</button>
   </header>
   <main>

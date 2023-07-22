@@ -1,0 +1,19 @@
+.booking-form {
+    background-color: #FFFF66;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-left: 450px;
+    margin-top:0 ;
+}
+.date-available {
+    color :black;
+    background-color:antiquewhite ;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+textarea {
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
