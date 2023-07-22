@@ -17,3 +17,9 @@ textarea {
     margin-bottom: 10px;
     border-radius: 5px;
 }
+.specific-time {
+    justify-content: space-between;
+}
+#datePicker {
+    margin:10px 10px;
+}
