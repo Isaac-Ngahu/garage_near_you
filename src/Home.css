@@ -23,6 +23,7 @@ body {
   .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    justify-content: space-between;
   }
   
   /* Feature section styling */
@@ -72,4 +73,22 @@ body {
   button:hover {
     background-color: #FFFF66;
     color: #FF6600;
+  }
+  p {
+    color:black;
+  }
+  h1{
+    font-size: 35px;
+  }
+  span {
+    color: black solid;
+  }
+  li{
+    display:flex;
+    background-color:#a5a538 ;
+    margin:3px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
   }

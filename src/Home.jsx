@@ -7,20 +7,28 @@ function Home() {
     <div className='home-page'>
     <header>
     <div><i class="fa-solid fa-id-badge"></i> Ngahu</div>
+    <button>Leave review</button>
+    <button>Book appointment</button>
     <button id='edit profile'> Edit profile</button>
   </header>
   <main>
     <section class="hero">
-      <p> Hero section with background image or color </p>
+    <h1>Welcome to Our Website</h1>
       <div class="hero-content">
-        <p> Add your hero content here </p>
-        <h1>Welcome to Our Website</h1>
+        <h2> We offer a wide range of services </h2>
+        <ul>
+          <li><span>Body and Paint Repairs: </span>Fixing minor dents, scratches, and repainting damaged areas.</li>
+          <li><span>Classic Car Restoration:</span> Restoring and refurbishing vintage and classic cars.</li>
+          <li><span>Fleet Maintenance: </span> Providing maintenance services for commercial and fleet vehicles.</li>
+          <li><span>Motorcycle and ATV Repairs:</span> Servicing and repairing motorcycles and all-terrain vehicles.</li>
+        </ul>
+        
         <p>This is a catchy tagline or description.</p>
-        <button>Call to Action</button>
+        
       </div>
     </section>
 
-    <section class="feature">
+    {/* <section class="feature">
       <p> Feature section with a different background color </p>
       <div class="feature-content">
         <p> Add your feature content here </p>
@@ -38,7 +46,7 @@ function Home() {
         <p>Join us to get the latest updates and special offers.</p>
         <button>Sign Up</button>
       </div>
-    </section>
+    </section> */}
 
     <p> Add more sections with different colors and content as needed </p>
 
