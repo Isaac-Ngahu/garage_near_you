@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { redirect as Redirect } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './Register.css'
 function Register() {
- const[isRegistered,setIsRegistered] = useState(false)
+ const navigate = useNavigate("/home")
  const [formData,setFormData] = useState({
     username:"",
     phoneNumber:"",
@@ -38,10 +38,7 @@ function Register() {
         password:"",
         confirmPassword:""
     }))
-    setIsRegistered(()=>true)
-    if (isRegistered){
-    return <Redirect to='/home' />;
-}
+    navigate("/home")
     }
     
 

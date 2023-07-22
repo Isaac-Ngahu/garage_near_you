@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
-import { Link, redirect as Redirect } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 // import Register from './Register'
 import './Login.css'
 function Login() {
-    const [isLoggedIn,setIsLoggedIn] = useState(false)
+    const navigate = useNavigate()
     const [data,setData] = useState({
         username:'',
         password:''
@@ -22,11 +22,7 @@ function Login() {
             username:'',
             password:''
         }))
-        setIsLoggedIn(()=>true)
-        if (isLoggedIn){
-            return <Redirect to='/home'/>
-        }
-        
+        navigate("/home")   
     }
   return (
     <div className='login-page'>
