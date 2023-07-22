@@ -13,6 +13,8 @@ function App() {
           <Route exact path='/' Component={Login}/>
           <Route exact path='/register' Component={Register}/>
           <Route exact path='/home' Component={Home}/>
+          <Route exact path='/reviews' Component={} />
+          <Route exact path='/appointments' Component={}
           </Routes>
       </Router>
     </div>
