@@ -18,6 +18,16 @@ function Appointment() {
     }
     function handleFormSubmit(e){
         e.preventDefault()
+        fetch("http://localhost:9292/booking",{
+            method:"POST",
+            headers:{
+                "Content-type":"application/json"
+            },
+            body:JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error))
         console.log(formData)
     }
   return (
