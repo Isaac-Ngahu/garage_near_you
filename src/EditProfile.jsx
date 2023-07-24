@@ -23,10 +23,10 @@ function EditProfile() {
   <form onSubmit={handleSubmit}>
     <label htmlFor="user-options">Choose an option:</label>
     <select id="user-options" name="options">
-      <option value="option1">Option 1</option>
-      <option value="option2">Option 2</option>
-      <option value="option3">Option 3</option>
-      <option value="option4">Option 4</option>
+      <option value="user_name">user_name</option>
+      <option value="email">Email</option>
+      <option value="password">password</option>
+      <option value="phone-number">Phone-number</option>
     </select>
     <label htmlFor='new-value'>Enter the new value:</label>
     <input type="text" value={newValue} id='newValue' onChange={handleChange} />
