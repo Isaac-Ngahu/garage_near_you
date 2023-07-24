@@ -4,14 +4,14 @@ import { useState } from 'react'
 
 function ReviewPost() {
  const [newReview,setNewReview] = useState("")
+const id = sessionStorage.getItem("user_id") 
  function handleReviewSubmit(e){
     e.preventDefault()
     console.log(newReview)
     const userReview = {
-      userId:,
+      user_id:id,
       review:newReview,
-      bookingId:
-    }
+      booking_id:8}
     fetch("http://localhost:9292/reviews",{
       method:"POST",
       headers :{

@@ -1,13 +1,24 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import { useEffect,useState } from 'react';
 import './Home.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Review from './Review';
+import { v4 as uuidv4 } from 'uuid';
 
 function Home() {
     const username = sessionStorage.getItem('username')
     const navigate = useNavigate()
-    
+    const [reviews,setReviews]=useState([])
+    const uniqueId = uuidv4();
+    useEffect(()=>{
+      fetch("http://localhost:9292/reviews")
+      .then(response => response.json())
+      .then(data =>{
+        console.log(data)
+        setReviews(()=> data)
+      } )
+    },[]);
   return (
     <div className='home-page'>
     <header>
@@ -33,32 +44,10 @@ function Home() {
       </div>
     </section>
     <section className="feature">
-    <Review />
-    <Review />
-    <Review />
+    {reviews.map((review)=>{
+      <Review key={uniqueId} review={review}/>
+    })}
     </section>
-
-
-    {/* <section class="feature">
-      <p> Feature section with a different background color </p>
-      <div class="feature-content">
-        <p> Add your feature content here </p>
-        <h2>Our Awesome Features</h2>
-        <p>Here are some key features of our product/service.</p>
-        <p> Add more feature details or images here </p>
-      </div>
-    </section>
-
-    <section class="call-to-action">
-      <p> Call-to-action section with a vibrant orange background </p>
-      <div class="call-to-action-content">
-        <p> Add your call-to-action content here </p>
-        <h2>Sign up now for exclusive benefits</h2>
-        <p>Join us to get the latest updates and special offers.</p>
-        <button>Sign Up</button>
-      </div>
-    </section> */}
-
   </main>
   <footer>
     

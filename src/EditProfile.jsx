@@ -11,16 +11,16 @@ function EditProfile() {
             update:selected,
             value:newValue
         }
-        fetch(`http://localhost:9292/user/${id}`,{
-          method:"PUT",
-          headers:{
-            "Content-type":"application/json"
-          },
-          body:JSON.stringify(changingDetails)
-        })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.log(error))
+        // fetch(`http://localhost:9292/user/${id}`,{
+        //   method:"PUT",
+        //   headers:{
+        //     "Content-type":"application/json"
+        //   },
+        //   body:JSON.stringify(changingDetails)
+        // })
+        // .then(response => response.json())
+        // .then(data => console.log(data))
+        // .catch(error => console.log(error))
         console.log(changingDetails)
         setNewvalue("")
     }

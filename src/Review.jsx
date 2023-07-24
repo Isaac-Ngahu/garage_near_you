@@ -1,11 +1,11 @@
 import React from 'react'
 import './Review.css'
 
-function Review() {
+function Review({review}) {
   return (
     <div className='review'>
-      <p>username:</p>
-      <p>my review</p>
+      <p>{review[0]} says:</p>
+      <p>{review[1]}</p>
     </div>
   )
 }

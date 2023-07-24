@@ -6,7 +6,7 @@ import './Login.css'
 function Login() {
     const navigate = useNavigate()
     const [data,setData] = useState({
-        username:'',
+        user_name:'',
         password:''
     })
     function handleChange(e){
@@ -17,7 +17,7 @@ function Login() {
     }
     function handleSubmit(e){
         e.preventDefault()
-        sessionStorage.setItem('username',data.username)
+        sessionStorage.setItem('username',data.user_name)
         fetch("http://localhost:9292/", {
   method: "POST",
   headers: {
@@ -25,20 +25,21 @@ function Login() {
   },
   body: JSON.stringify(data)
 })
-  .then(response =>{
-    console.log(response)
-     response.json()})
+  .then(response => response.json())
   .then(data => {
-    console.log('Data successfully sent:', data);
+    if (data.error) {
+      alert(`error ${data.error}`);
+    } else {
+      sessionStorage.setItem('user_id',data.user_id)
+      setData(()=>({
+        user_name:"",
+        password:""
+    }))
+    navigate("/home")
+    }
   })
-  .catch(error => {
-    console.error('Error while sending data:', error);
-  });
-        setData(()=>({
-            username:'',
-            password:''
-        }))
-        navigate("/home")   
+  
+           
     }
   return (
     <div className='login-page'>
@@ -48,7 +49,7 @@ function Login() {
             <h2>please Login to start</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
-                <input type="text" id="username" name="username" value={data.username} onChange={handleChange} required/>
+                <input type="text" id="user_name" name="user_name" value={data.user_name} onChange={handleChange} required/>
                 
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" value={data.password} onChange={handleChange} required/>
