@@ -7,6 +7,21 @@ function ReviewPost() {
  function handleReviewSubmit(e){
     e.preventDefault()
     console.log(newReview)
+    const userReview = {
+      userId:,
+      review:newReview,
+      bookingId:
+    }
+    fetch("http://localhost:9292/reviews",{
+      method:"POST",
+      headers :{
+        "Content-type":"application/json"
+      },
+      body:JSON.stringify(userReview)
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
     setNewReview("")
  }
  function handleChange(e){

@@ -21,11 +21,11 @@ function EditProfile() {
     <div className='edit-profile'>
         <h2>Select an Option:</h2>
   <form onSubmit={handleSubmit}>
-    <label htmlFor="user-options">Choose an option:</label>
+    <label htmlFor="user-options">Choose the part of your profile you want changed:</label>
     <select id="user-options" name="options">
-      <option value="user_name">user_name</option>
+      <option value="user_name">User Name</option>
       <option value="email">Email</option>
-      <option value="password">password</option>
+      <option value="password">Password</option>
       <option value="phone-number">Phone-number</option>
     </select>
     <label htmlFor='new-value'>Enter the new value:</label>
