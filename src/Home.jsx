@@ -2,21 +2,22 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Home.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import Review from './Review';
 function Home() {
     const username = sessionStorage.getItem('username')
     const navigate = useNavigate()
   return (
     <div className='home-page'>
     <header>
-    <div><i class="fa-solid fa-id-badge"></i> Ngahu</div>
+    <div><i className="fa-solid fa-id-badge"></i> {username}</div>
     <button onClick={()=>navigate("/reviews")}>Leave review</button>
     <button onClick={()=>navigate('/appointments')}>Book appointment</button>
     <button id='edit profile'> Edit profile</button>
   </header>
   <main>
-    <section class="hero">
+    <section className="hero">
     <h1>Welcome to Our Website</h1>
-      <div class="hero-content">
+      <div className="hero-content">
         <h2> We offer a wide range of services </h2>
         <ul>
           <li><span>Body and Paint Repairs: </span>Fixing minor dents, scratches, and repainting damaged areas.</li>
@@ -25,10 +26,16 @@ function Home() {
           <li><span>Motorcycle and ATV Repairs:</span> Servicing and repairing motorcycles and all-terrain vehicles.</li>
         </ul>
         
-        <p>This is a catchy tagline or description.</p>
+        <p>Expert Hands, Smooth Rides.</p>
         
       </div>
     </section>
+    <section className="feature">
+    <Review />
+    <Review />
+    <Review />
+    </section>
+
 
     {/* <section class="feature">
       <p> Feature section with a different background color </p>
@@ -50,11 +57,9 @@ function Home() {
       </div>
     </section> */}
 
-    <p> Add more sections with different colors and content as needed </p>
-
   </main>
   <footer>
-    <p> Add your footer content here </p>
+    
     <p>&copy; 2023 Your Company. All rights reserved.</p>
   </footer>
     </div>

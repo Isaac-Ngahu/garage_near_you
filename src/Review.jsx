@@ -3,7 +3,10 @@ import './Review.css'
 
 function Review() {
   return (
-    <div>Review</div>
+    <div className='review'>
+      <p>username:</p>
+      <p>my review</p>
+    </div>
   )
 }
 

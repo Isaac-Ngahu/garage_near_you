@@ -18,6 +18,22 @@ function Login() {
     function handleSubmit(e){
         e.preventDefault()
         sessionStorage.setItem('username',data.username)
+        fetch("http://localhost:9292/", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(data)
+})
+  .then(response =>{
+    console.log(response)
+     response.json()})
+  .then(data => {
+    console.log('Data successfully sent:', data);
+  })
+  .catch(error => {
+    console.error('Error while sending data:', error);
+  });
         setData(()=>({
             username:'',
             password:''
@@ -31,7 +47,7 @@ function Login() {
         <div id='no-account'>Don't have an account? <Link to='/register'>Register Here</Link></div>
             <h2>please Login to start</h2>
             <form onSubmit={handleSubmit}>
-                <label for="username">Username:</label>
+                <label htmlFor="username">Username:</label>
                 <input type="text" id="username" name="username" value={data.username} onChange={handleChange} required/>
                 
                 <label for="password">Password:</label>
