@@ -4,7 +4,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 300px;
-    margin-left: 450px;
+    margin-left: 470px;
     margin-top:0 ;
 }
 .date-available {
@@ -22,4 +22,11 @@ textarea {
 }
 #datePicker {
     margin:10px 10px;
+}
+ul {
+    justify-content: center;
+}
+li {
+    list-style-type: none;
+    background-color: antiquewhite;
 }

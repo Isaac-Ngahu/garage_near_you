@@ -5,13 +5,14 @@ import { useState } from 'react'
 function ReviewPost() {
  const [newReview,setNewReview] = useState("")
 const id = sessionStorage.getItem("user_id") 
+const booking_id = sessionStorage.getItem("booking_id")
  function handleReviewSubmit(e){
     e.preventDefault()
     console.log(newReview)
     const userReview = {
       user_id:id,
       review:newReview,
-      booking_id:8}
+      booking_id:booking_id}
     fetch("http://localhost:9292/reviews",{
       method:"POST",
       headers :{
@@ -20,7 +21,7 @@ const id = sessionStorage.getItem("user_id")
       body:JSON.stringify(userReview)
     })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => console.log(userReview))
     .catch(error => console.log(error))
     setNewReview("")
  }

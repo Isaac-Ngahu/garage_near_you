@@ -28,13 +28,25 @@ function Appointment() {
             body:JSON.stringify(formData)
         })
         .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.log(error))
-        console.log(formData)
+        .then(data =>{
+            if(data.error){
+                alert(data.error)
+            }else{
+                sessionStorage.setItem("booking_id" , data.booking_id)
+                const ul = document.getElementById("success-message")
+                const li = document.createElement('li')
+                li.textContent = "Booking created succesfully"
+                ul.appendChild(li)
+            }
+        })
+        // console.log(data))
+        // .catch(error => console.log(error))
+        // console.log(formData)
     }
   return (
     <div className='appointments'>
         <h1>Book an appointment with us today <i class="fa-solid fa-face-grin-wide"></i></h1>
+        <ul id='success-message'></ul>
         <form className='booking-form' onSubmit={handleFormSubmit}>
             <label htmlFor='customer-issue'>Enter the service type you would like sorted:</label>
             <textarea type='text' id='service_type' required value={formData.service_type} onChange={handleFormChange}></textarea>
