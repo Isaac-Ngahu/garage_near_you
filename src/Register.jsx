@@ -26,6 +26,26 @@ function Register() {
     if (response !== "proceed"){
         alert(response)
     }else{
+      const user_details = {
+        user_name:formData.username,
+        phone_number:formData.phoneNumber,
+        email:formData.email,
+        password:formData.password
+      }
+      fetch("http://localhost:9292/register",{
+        method:"POST",
+        headers:{
+          "Content-type":"application/json"
+        },
+        body:JSON.stringify(user_details)
+      })
+      .then(response => response.json())
+      .then(data =>{
+        console.log(data)
+        if (data.error){
+          alert(data.error)
+        }else{
+          sessionStorage.setItem("user_id",data["user_id"])
     const messageContainer = document.querySelector(".append-message")
     const li = document.createElement("li")
     li.className = "message"
@@ -39,9 +59,9 @@ function Register() {
         confirmPassword:""
     }))
     navigate("/home")
-    }
+        }})
     
-
+    }
  }
  function validateDetails(data){
     const {username,phoneNumber,email,password,confirmPassword} = data
@@ -57,6 +77,7 @@ function Register() {
         return "proceed"
     }
  }
+
   return (
     <div className='register-container'>
         <h1 id='header'>Register with us <span>Your trusted pit crew for top-notch car fixes!</span></h1>
