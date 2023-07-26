@@ -21,7 +21,7 @@ function Appointment() {
     function handleFormSubmit(e){
         e.preventDefault()
         console.log(formData)
-        fetch("http://localhost:9292/booking",{
+        fetch("http://localhost:9292/create/booking",{
             method:"POST",
             headers:{
                 "Content-type":"application/json"
@@ -33,7 +33,6 @@ function Appointment() {
             if(data.error){
                 alert(data.error)
             }else{
-                console.log(data)
                 sessionStorage.setItem("booking_id" , data.booking_id)
                 const ul = document.getElementById("success-message")
                 const li = document.createElement('li')
@@ -53,7 +52,7 @@ function Appointment() {
     }
   return (
     <div className='appointments'>
-        <h1>Book an appointment with us today <i class="fa-solid fa-face-grin-wide"></i></h1>
+        <h1>Book an appointment with us today <i className="fa-solid fa-face-grin-wide"></i></h1>
         <ul id='success-message'></ul>
         <form className='booking-form' onSubmit={handleFormSubmit}>
             <label htmlFor='customer-issue'>Enter the service type you would like sorted:</label>

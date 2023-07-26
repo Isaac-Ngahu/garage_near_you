@@ -32,7 +32,7 @@ function Register() {
         email:formData.email,
         password:formData.password
       }
-      fetch("http://localhost:9292/register",{
+      fetch("http://localhost:9292/register/user",{
         method:"POST",
         headers:{
           "Content-type":"application/json"
@@ -46,6 +46,7 @@ function Register() {
           alert(data.error)
         }else{
           sessionStorage.setItem("user_id",data["user_id"])
+          console.log(data["user_id"])
     const messageContainer = document.querySelector(".append-message")
     const li = document.createElement("li")
     li.className = "message"

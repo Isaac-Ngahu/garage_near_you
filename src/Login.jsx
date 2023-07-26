@@ -52,7 +52,7 @@ function Login() {
                 <label htmlFor="username">Username:</label>
                 <input type="text" id="user_name" name="user_name" value={data.user_name} onChange={handleChange} required/>
                 
-                <label for="password">Password:</label>
+                <label htmlFor="password">Password:</label>
                 <input type="password" id="password" name="password" value={data.password} onChange={handleChange} required/>
                 
                 <button type="submit">Log In</button>  

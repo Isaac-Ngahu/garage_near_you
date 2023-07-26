@@ -12,7 +12,7 @@ function EditProfile() {
             update:selected,
             value:newValue
         }
-        fetch(`http://localhost:9292/user/${id}`,{
+        fetch(`http://localhost:9292/update/user/${id}`,{
           method:"PUT",
           headers:{
             "Content-type":"application/json"

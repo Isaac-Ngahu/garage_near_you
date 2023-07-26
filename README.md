@@ -1,4 +1,4 @@
-# meme-page.github.io
+# Garage-near-you
 # program name
 Garage-near-you.io
 The title is: Garage-near-you
@@ -8,6 +8,7 @@ Isaac Ngahu
 This is a project that enables a user to book an appointment with us which is its main objective
 The website also has some additional features such as leaving a review, registering users, users can also edit their profiles and see reviews from other users on the home page 
 # Project setup instructions
-
-# Link to livesite
-[livelink]( https://isaac-ngahu.github.io/meme-page.github.io/)
+run npm install to install all the dependencies needed for this specific project
+run npm start to see the application on your browser
+# Link to backend application
+[link](https://github.com/Isaac-Ngahu/phase-3-sinatra-react-project)
