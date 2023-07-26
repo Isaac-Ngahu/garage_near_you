@@ -30,6 +30,7 @@ function Login() {
     if (data.error) {
       alert(`error ${data.error}`);
     } else {
+      console.log(data)
       sessionStorage.setItem('user_id',data.user_id)
       setData(()=>({
         user_name:"",

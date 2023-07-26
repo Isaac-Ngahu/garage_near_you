@@ -20,6 +20,7 @@ function Appointment() {
     }
     function handleFormSubmit(e){
         e.preventDefault()
+        console.log(formData)
         fetch("http://localhost:9292/booking",{
             method:"POST",
             headers:{
@@ -32,16 +33,23 @@ function Appointment() {
             if(data.error){
                 alert(data.error)
             }else{
+                console.log(data)
                 sessionStorage.setItem("booking_id" , data.booking_id)
                 const ul = document.getElementById("success-message")
                 const li = document.createElement('li')
                 li.textContent = "Booking created succesfully"
                 ul.appendChild(li)
+                setFormData(()=>({
+                service_type:'',
+                vehicle_make:'',
+                additional_notes:'',
+                booking_date:'',
+                booking_time:''
+                }))
             }
         })
         // console.log(data))
-        // .catch(error => console.log(error))
-        // console.log(formData)
+        .catch(error => console.log(error))
     }
   return (
     <div className='appointments'>

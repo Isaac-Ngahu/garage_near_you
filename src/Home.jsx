@@ -15,8 +15,12 @@ function Home() {
       fetch("http://localhost:9292/reviews")
       .then(response => response.json())
       .then(data =>{
-        console.log(data)
-        setReviews(()=> data)
+        if(data.error){
+          return;
+        }else{
+          setReviews(()=>data)
+        }
+        
       } )
     },[]);
   return (
@@ -43,11 +47,12 @@ function Home() {
         
       </div>
     </section>
-    <section className="feature">
+    <div className="feature">
+      <h1>Review section</h1>
     {reviews.map((review)=>{
-      <Review key={uniqueId} review={review}/>
+      return <Review key={uniqueId} review={review}/>
     })}
-    </section>
+    </div>
   </main>
   <footer>
     

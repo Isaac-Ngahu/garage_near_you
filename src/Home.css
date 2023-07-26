@@ -29,12 +29,12 @@ body {
   /* Feature section styling */
   .feature {
     background-color: #333333;
-    color: #FFFF66;
-    text-align: center;
     align-items: center;
-    justify-content: center;
     padding: 80px 0;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   
   .feature-content {
@@ -81,6 +81,7 @@ body {
     color:black;
   }
   h1{
+    margin-top: 0;
     font-size: 35px;
   }
   span {
